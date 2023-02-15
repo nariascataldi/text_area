@@ -6,13 +6,29 @@ export const App = () => {
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates sed maiores aperiam tenetur doloremque cum officia maxime quae eveniet libero repellendus expedita corporis tempore temporibus, dignissimos quis, corrupti repellat molestias for lio"
   );
 
+  const MAX_LENGTH = 250;
+
   const [isOverLimit, setIsOverLimit] = useState(false);
   const [resto, setResto] = useState("");
 
   const handleChange = (event) => {
-    setResto(event.target.value.slice(250));
-    setHighlightText(event.target.value.slice(0, 250));
-    setIsOverLimit(event.target.value.length > 250);
+    // setResto(event.target.value.slice(250));
+    // setHighlightText(event.target.value.slice(0, 250));
+    setHighlightText(event.target.value);
+    setIsOverLimit(event.target.value.length > MAX_LENGTH);
+  };
+  const renderTextWithHighlight = () => {
+    if (isOverLimit) {
+      return (
+        <>
+          <span>{highlightText.slice(0, MAX_LENGTH)}<span style={{
+            backgroundColor: "rgba(242, 208, 215, 1)", color: 'rgba(217, 108, 137, 1)'
+          }}>{highlightText.slice(MAX_LENGTH)}</span></span>
+        </>
+      );
+    } else {
+      return <span>{highlightText}</span>;
+    }
   };
 
   return (
@@ -25,12 +41,14 @@ export const App = () => {
           </div>
           <div className="Contador">
             {isOverLimit ? (
-              <h4 style={{ color: "#D96C89" }}>{highlightText.length}/250</h4>
+              <h4 style={{ color: "#D96C89" }}>{highlightText.length}/{MAX_LENGTH}</h4>
             ) : (
-              <h4 style={{ color: "#212126" }}>{highlightText.length}/250</h4>
+              <h4 style={{ color: "#212126" }}>{highlightText.length}/{MAX_LENGTH}</h4>
             )}
           </div>
         </div>
+        <div className="BackBody" style={{ border: isOverLimit && '1px solid #D96C89' }}> {renderTextWithHighlight()} </div>
+
         <form>
           <textarea
             className="InputBody"
@@ -40,11 +58,11 @@ export const App = () => {
               border: isOverLimit ? "1px solid #D96C89" : "1px solid #212126",
               backgroundColor: isOverLimit ? "#FFE6E6" : "#FDFCFC",
             }}
-            value={highlightText + (resto && resto)}
+            value={highlightText}
             onChange={handleChange}
           ></textarea>
         </form>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };

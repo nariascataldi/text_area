@@ -7,27 +7,24 @@ p {
   margin-inline-end: 0px;
 }
 
-.App {
+/* .App {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-}
+} */
 
 .BoxInput {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 8px 0px 24px;
-  gap: 10px;
-
   width: 640px;
   height: 352px;
 
   background: #F6F4EA;
   border-radius: 8px;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
 .Encabezado {
@@ -79,24 +76,29 @@ p {
 }
 
 .InputBody {
+  /* InputBody */
+
+
   box-sizing: border-box;
+
+  /* Auto layout */
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 16px;
 
+  position: absolute;
   width: 560px;
   height: 264px;
+  left: 40px;
+  top: 64px;
 
   background: #FDFCFC;
+  opacity: 0.1;
+  border: 1px solid #D96C89;
   border-radius: 8px;
 
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
-.InputBody {
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 700;
@@ -104,3 +106,38 @@ p {
   line-height: 33px;
   color: #212126;
 }
+
+.BackBody {
+  /* BackBody */
+
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+
+  position: absolute;
+  width: 560px;
+  height: 264px;
+  left: 40px;
+  top: 64px;
+
+  background: #FDFCFC;
+
+  border-radius: 8px;
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  color: #212126;
+}
+
+/* .maximo{
+  white-space: pre-line;
+} */
