@@ -9,11 +9,8 @@ export const App = () => {
   const MAX_LENGTH = 250;
 
   const [isOverLimit, setIsOverLimit] = useState(false);
-  const [resto, setResto] = useState("");
 
   const handleChange = (event) => {
-    // setResto(event.target.value.slice(250));
-    // setHighlightText(event.target.value.slice(0, 250));
     setHighlightText(event.target.value);
     setIsOverLimit(event.target.value.length > MAX_LENGTH);
   };
