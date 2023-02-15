@@ -1,3 +1,12 @@
+h3,
+h4,
+p {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
 .App {
   display: flex;
   justify-content: center;
@@ -22,45 +31,29 @@
 }
 
 .Encabezado {
-  /* Auto layout */
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0px 40px 0px 24px;
-  gap: 16px;
-
-  width: 640px;
-  height: 33px;
+  width: 90%;
 }
 
 .Trade {
-  /* Auto layout */
-
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
   gap: 16px;
-
-  width: 222px;
-  height: 33px;
 }
 
 .Trade h3 {
-  /* width: 188px; */
-  /* height: 33px; */
-
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 33px;
-  /* identical to box height */
-
-
-  color: #000000;
+  color: #212126;
 
 }
 
@@ -74,7 +67,7 @@
 
 .Contador {
   width: 63px;
-  height: 22px;
+
 }
 
 .Contador h4 {
@@ -83,8 +76,31 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
-  /* identical to box height */
+}
 
+.InputBody {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
 
-  color: #D96C89;
+  width: 560px;
+  height: 264px;
+
+  background: #FDFCFC;
+  border-radius: 8px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.InputBody {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  color: #212126;
 }
