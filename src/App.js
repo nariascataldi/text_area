@@ -3,17 +3,15 @@ import { useState } from "react";
 
 export const App = () => {
   const [highlightText, setHighlightText] = useState(
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates sed maiores aperiam tenetur doloremque cum officia maxime quae eveniet libero repellendus expedita corporis tempore temporibus, dignissimos quis, corrupti repellat molestias for lio messi"
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates sed maiores aperiam tenetur doloremque cum officia maxime quae eveniet libero repellendus expedita corporis tempore temporibus, dignissimos quis, corrupti repellat molestias for lio"
   );
 
   const [isOverLimit, setIsOverLimit] = useState(false);
   const [resto, setResto] = useState("");
 
   const handleChange = (event) => {
-    const docientoscincuenta = event.target.value.slice(0, 250);
-    const resto = event.target.value.slice(250);
-    setResto(resto);
-    setHighlightText(docientoscincuenta);
+    setResto(event.target.value.slice(250));
+    setHighlightText(event.target.value.slice(0, 250));
     setIsOverLimit(event.target.value.length > 250);
   };
 
@@ -42,13 +40,11 @@ export const App = () => {
               border: isOverLimit ? "1px solid #D96C89" : "1px solid #212126",
               backgroundColor: isOverLimit ? "#FFE6E6" : "#FDFCFC",
             }}
-            value={highlightText}
+            value={highlightText + (resto && resto)}
             onChange={handleChange}
-          >
-            {resto && <span>{resto}</span>}
-          </textarea>
+          ></textarea>
         </form>
       </div>
     </div>
   );
-}
+};
