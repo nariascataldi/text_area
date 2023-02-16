@@ -1,12 +1,16 @@
 /* Variables de colores */
 :root {
-  --color-background-boxinput: #F6F4EA;
-  --color-text-trade-h3: #212126;
-  --color-text-trade-h4: #212126;
+  /* Taupe 100 */
+  --color-background-boxinput: rgba(233, 230, 226, 1);
+  /* Azul Marino */
+  --color-text-trade-h3: #172B4D;
+  --color-text-trade-h4: #172B4D;
+  --color-text-inputbody: #172B4D;
+  --color-text-backbody: #172B4D;
+
   --color-background-inputbody: #FDFCFC;
-  --color-border-inputbody: #D96C89;
-  --color-text-inputbody: rgba(33, 3, 0, 1);
-  --color-text-backbody: rgba(33, 33, 38, 1);
+  /* Cognac */
+  --color-border-inputbody: #6D4C41;
 }
 
 /* Reset de margen */

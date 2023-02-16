@@ -3,7 +3,7 @@ import "./App.css";
 
 export const App = () => {
   const [highlightText, setHighlightText] = useState(
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates sed maiores aperiam tenetur doloremque cum officia maxime quae eveniet libero repellendus expedita corporis tempore temporibus, dignissimos quis, corrupti repellat molestias for lio"
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates sed maiores aperiam tenetur doloremque cum officia maxime quae eveniet libero repellendus expedita corporis tempore temporibus, dignissimos quis, corrupti repellat molestias for 123typeof null // object 🤯"
   );
 
   const MAX_LENGTH = 250;
@@ -26,17 +26,18 @@ export const App = () => {
         {/* Encabezado con título y contador de caracteres */}
         <div className="Encabezado">
           <div className="Trade">
-            <h3>Trade preference</h3>
-            <h4>ℹ️</h4>
+            <h3>Desafío: Colorea cuando exceda el límite</h3>
+            <h4>🍀</h4>
           </div>
           <div className="Contador">
-            <h4 style={{ color: isOverLimit ? "#D96C89" : "#212126" }}>
+          {/* cognac y azul marino */}
+            <h4 style={{ color: isOverLimit ? "#6D4C41" : "#172B4D" }}>
               {highlightText.length}/{MAX_LENGTH}
             </h4>
           </div>
         </div>
         {/* Texto con límite de caracteres */}
-        <div className="BackBody" style={{ border: isOverLimit ? '1px solid #D96C89' : '0.1px solid #212126' }}>
+        <div className="BackBody" style={{ border: isOverLimit ? '1px solid #D96C89' : '0px solid #212126' }}>
           <span>
             {/* Muestra los primeros caracteres dentro del límite */}
             {highlightText.slice(0, MAX_LENGTH)}
@@ -44,7 +45,7 @@ export const App = () => {
             {isOverLimit && (
               <span
                 style={{
-                  color: "rgba(217, 108, 137, 1)",
+                  color: "red",
                   background:'rgba(242, 208, 215, 1)',
                   zIndex:2
                 }}
