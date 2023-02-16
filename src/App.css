@@ -1,10 +1,10 @@
 /* Variables de colores */
 :root {
-  /* Taupe 100 */
-  --color-background-boxinput: rgba(233, 230, 226, 1);
-  /* Azul Marino */
-  --color-text-trade-h3: #172B4D;
-  --color-text-trade-h4: #172B4D;
+  /* Taupe */
+  --color-background-boxinput: #483c32;
+  /* Azul Marino claro y oscuro*/
+  --color-text-trade-h3: #EBF0F9;
+  --color-text-trade-h4: #EBF0F9;
   --color-text-inputbody: #172B4D;
   --color-text-backbody: #172B4D;
 

@@ -31,7 +31,7 @@ export const App = () => {
           </div>
           <div className="Contador">
           {/* cognac y azul marino */}
-            <h4 style={{ color: isOverLimit ? "#6D4C41" : "#172B4D" }}>
+            <h4 style={{ color: isOverLimit ? "red" : "#EBF0F9" }}>
               {highlightText.length}/{MAX_LENGTH}
             </h4>
           </div>
