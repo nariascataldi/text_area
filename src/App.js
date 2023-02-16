@@ -9,16 +9,21 @@ export const App = () => {
   const MAX_LENGTH = 250;
   let isOverLimit = highlightText.length > MAX_LENGTH;
 
+  // Función que se ejecuta al cambiar el valor del textarea
   const handleChange = (event) => {
     const text = event.target.value;
-    const trimmedText = text.replace(/\s\s+/g, " "); // Reemplazar múltiples espacios por un solo espacio
+    // Elimina múltiples espacios en blanco por uno solo
+    const trimmedText = text.replace(/\s\s+/g, " "); 
+    // Verifica si el texto supera el límite de caracteres
     isOverLimit = trimmedText.length > MAX_LENGTH;
+    // Actualiza el estado del texto
     setHighlightText(trimmedText);
   };
 
   return (
     <div className="App">
       <div className="BoxInput">
+        {/* Encabezado con título y contador de caracteres */}
         <div className="Encabezado">
           <div className="Trade">
             <h3>Trade preference</h3>
@@ -30,9 +35,12 @@ export const App = () => {
             </h4>
           </div>
         </div>
+        {/* Texto con límite de caracteres */}
         <div className="BackBody" style={{ border: isOverLimit ? '1px solid #D96C89' : '0.1px solid #212126' }}>
           <span>
+            {/* Muestra los primeros caracteres dentro del límite */}
             {highlightText.slice(0, MAX_LENGTH)}
+            {/* Muestra los caracteres restantes que superan el límite */}
             {isOverLimit && (
               <span
                 style={{
@@ -46,7 +54,7 @@ export const App = () => {
             )}
           </span>
         </div>
-
+        {/* Textarea para ingresar el texto */}
         <form>
           <textarea
             className="InputBody"
