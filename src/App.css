@@ -1,143 +1,103 @@
-h3,
-h4,
-p {
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+/* Variables de colores */
+:root {
+  --color-background-boxinput: #F6F4EA;
+  --color-text-trade-h3: #212126;
+  --color-text-trade-h4: #212126;
+  --color-background-inputbody: #FDFCFC;
+  --color-border-inputbody: #D96C89;
+  --color-text-inputbody: rgba(33, 3, 0, 1);
+  --color-text-backbody: rgba(33, 33, 38, 1);
 }
 
-/* .App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-} */
+/* Reset de margen */
+h3, h4, p {
+  margin: 0;
+}
 
+/* Estilos de caja de entrada */
 .BoxInput {
   width: 640px;
   height: 352px;
-
-  background: #F6F4EA;
+  background-color: var(--color-background-boxinput);
   border-radius: 8px;
-
   flex: none;
   order: 0;
   flex-grow: 0;
 }
 
+/* Estilos de encabezado */
 .Encabezado {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 40px 0px 24px;
+  padding: 0 40px 0 24px;
   width: 90%;
 }
 
+/* Estilos de elementos de Trade */
 .Trade {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  padding: 0px;
   gap: 16px;
 }
 
 .Trade h3 {
   font-family: 'Nunito';
-  font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 33px;
-  color: #212126;
-
+  color: var(--color-text-trade-h3);
 }
 
 .Trade h4 {
   font-family: 'Inter';
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
+  color: var(--color-text-trade-h4);
 }
 
 .Contador {
   width: 63px;
-
 }
 
 .Contador h4 {
   font-family: 'Nunito';
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
 }
 
-.InputBody {
-  /* InputBody */
-
-
+/* Estilos de cuerpo de entrada */
+.InputBody, .BackBody {
   box-sizing: border-box;
-
-  /* Auto layout */
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 16px;
-
   position: absolute;
   width: 560px;
   height: 264px;
   left: 40px;
   top: 64px;
-
-  background: #FDFCFC;
-  opacity: 0.1;
-  border: 1px solid #D96C89;
   border-radius: 8px;
-
   font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 24px;
   line-height: 33px;
-  color: #212126;
+}
+
+.InputBody {
+  background-color: var(--color-background-inputbody);
+  opacity: 0.5;
+  border: 1px solid var(--color-border-inputbody);
+  color: var(--color-text-inputbody);
+  z-index: 1;
 }
 
 .BackBody {
-  /* BackBody */
-
-
-  box-sizing: border-box;
-
-  /* Auto layout */
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 16px;
-
-  position: absolute;
-  width: 560px;
-  height: 264px;
-  left: 40px;
-  top: 64px;
-
-  background: #FDFCFC;
-
-  border-radius: 8px;
-
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
-  color: #212126;
+  background-color: var(--color-background-inputbody);
+  opacity: 1;
+  color: var(--color-text-backbody);
+  z-index: 0;
 }
-
-/* .maximo{
-  white-space: pre-line;
-} */
